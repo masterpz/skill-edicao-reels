@@ -1,0 +1,8 @@
+node_modules/
+.venv/
+skills/motor-reels/models/*.onnx
+skills/motor-reels/models/*.part
+skills/motor-reels/.motor.json
+*_job/
+__pycache__/
+.DS_Store

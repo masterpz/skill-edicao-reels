@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "skill-edicao-reels",
+  "description": "Skill de edição de reels com IA, por Pedro Zanatta",
+  "owner": {
+    "name": "Pedro Zanatta",
+    "url": "https://instagram.com/pedrozanatta1"
+  },
+  "plugins": [
+    {
+      "name": "edicao-reels",
+      "description": "Seis estilos de edição de reels com IA que rodam localmente no Claude Code.",
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/masterpz/skill-edicao-reels"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "edicao-reels",
+  "description": "Seis estilos de edição de reels com IA: negócios, ranking, profundidade, grade com recorte, painel explicativo e pessoal. Transcreve, recorta e renderiza localmente um vídeo seu falando para a câmera.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Pedro Zanatta",
+    "url": "https://instagram.com/pedrozanatta1"
+  },
+  "homepage": "https://github.com/masterpz/skill-edicao-reels",
+  "repository": "https://github.com/masterpz/skill-edicao-reels",
+  "license": "MIT",
+  "keywords": ["reels", "video", "edicao", "legenda", "instagram", "tiktok"]
+}

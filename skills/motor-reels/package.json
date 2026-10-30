@@ -1,0 +1,12 @@
+{
+  "name": "motor-reels",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Motor de renderização da skill de edição de reels",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "1.63.0",
+    "@fontsource/inter": "^5.0.0",
+    "@fontsource/jetbrains-mono": "^5.0.0"
+  }
+}
