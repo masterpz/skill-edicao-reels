@@ -96,7 +96,7 @@ A pessoa aparece recortada na frente e as janelas de interface flutuam atrás da
   - `grafico`: barras.
   - `imagem`: print do usuário, com o caminho completo ou relativo à pasta do job.
 - `posicao` (de 1 a 8, opcional) fixa o lugar da janela.
-- `topo_cabeca` (padrão 700) é a altura, em pixels de 0 a 1920, onde fica o topo da cabeça. `escala_pessoa` (padrão 1) aumenta ou diminui a pessoa.
+- `topo_cabeca` (padrão 760) é a altura, em pixels de 0 a 1920, onde fica o topo da cabeça. `escala_pessoa` (padrão 1) aumenta ou diminui a pessoa.
 
 ## grade → /grade-recorte
 
@@ -123,7 +123,7 @@ Quatro blocos (2x2) preenchem a tela e viram juntos em 3D a cada troca. A pessoa
 - Os blocos de baixo ficam quase todos atrás da pessoa, só o topo deles aparece. Use neles 1 palavra curta.
 - Um bloco pode ser texto (`rotulo`, `texto`, `cor`, `corTexto`) ou imagem (`imagem`). Sem `cor`, o motor usa uma paleta padrão.
 - Troque de conjunto a cada 3 a 6 segundos, sempre num fim de frase.
-- `topo_cabeca` (padrão 860) e `escala_pessoa` (padrão 1) ajustam a posição e o tamanho da pessoa.
+- `topo_cabeca` (padrão 880) e `escala_pessoa` (padrão 1) ajustam a posição e o tamanho da pessoa.
 
 ## painel → /painel-explicativo
 

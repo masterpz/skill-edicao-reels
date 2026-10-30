@@ -15,24 +15,24 @@ ESTILOS.ranking = function (R) {
   const pal = ['#DC2626', '#F59E0B', '#2160E0', '#7C3AED', '#0EA5E9', '#DB2777'];
 
   const area = R.el('div', `left:0;top:0;width:1080px;height:1060px;background:${C.bg};background-image:linear-gradient(${C.grid} 2px,transparent 2px),linear-gradient(90deg,${C.grid} 2px,transparent 2px);background-size:60px 60px;overflow:hidden`, null, null, 'abs');
-  const ttl = R.el('div', `left:46px;top:120px;width:988px;color:${C.tx};line-height:1.02;transform-origin:0 50%`, area, R.destaque(P.titulo || '', P.destaque, cor), 'abs big');
-  R.ajusta(ttl, 988, 84, 44, 190);
-  const tb = 120 + ttl.offsetHeight + 34, avail = 1030 - tb, n = Math.max(1, itens.length), gap = 22;
+  const ttl = R.el('div', `left:70px;top:260px;width:940px;color:${C.tx};line-height:1.02;transform-origin:0 50%`, area, R.destaque(P.titulo || '', P.destaque, cor), 'abs big');
+  R.ajusta(ttl, 940, 76, 40, 160);
+  const tb = 260 + ttl.offsetHeight + 30, avail = 930 - tb, n = Math.max(1, itens.length), gap = 22;
   const ch = Math.min(196, (avail - gap * (n - 1)) / n), k = ch / 196;
   const cards = itens.map((it, i) => {
-    const c = R.el('div', `left:46px;top:${tb + i * (ch + gap)}px;width:988px;height:${ch}px;border-radius:${32 * k}px;background:${C.card};color:${C.tx};display:flex;align-items:center;gap:${30 * k}px;padding:0 ${34 * k}px;box-shadow:0 18px 44px rgba(0,0,0,.14);transform-origin:50% 50%`, area,
+    const c = R.el('div', `left:70px;top:${tb + i * (ch + gap)}px;width:940px;height:${ch}px;border-radius:${32 * k}px;background:${C.card};color:${C.tx};display:flex;align-items:center;gap:${30 * k}px;padding:0 ${34 * k}px;box-shadow:0 18px 44px rgba(0,0,0,.14);transform-origin:50% 50%`, area,
       `<div style="width:${124 * k}px;height:${124 * k}px;border-radius:${30 * k}px;flex:none;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:${76 * k}px;color:#fff;background:${i === venc ? '#16A34A' : (it.cor || pal[i % pal.length])}">${it.numero != null ? R.esc(it.numero) : i + 1}</div>
        <div style="min-width:0;flex:1"><div class=big style="font-size:${54 * k}px;letter-spacing:-.025em;white-space:nowrap">${R.esc(it.titulo)}</div>${it.sub ? `<div style="font-size:${30 * k}px;color:${C.sub};margin-top:${6 * k}px;white-space:nowrap">${R.esc(it.sub)}</div>` : ''}</div>`, 'abs');
-    const tw = 988 - 68 * k - 124 * k - 30 * k - 20;
+    const tw = 940 - 68 * k - 124 * k - 30 * k - 20;
     R.ajusta(c.querySelector('.big'), tw, 54 * k, 24);
     if (c.querySelector('.big').nextSibling) R.ajusta(c.querySelector('.big').nextSibling, tw, 30 * k, 16);
     return c;
   });
   const seloTxt = P.selo || (venc >= 0 ? 'O MELHOR ✓' : '');
-  const selo = seloTxt && venc >= 0 ? R.el('div', `right:70px;top:${tb + venc * (ch + gap) + ch - 40}px;left:auto;font-weight:900;font-size:58px;color:#16A34A;border:7px solid #16A34A;border-radius:18px;padding:2px 22px 6px;background:rgba(255,255,255,.94);transform-origin:50% 50%;z-index:3`, area, R.esc(seloTxt), 'abs') : null;
+  const selo = seloTxt && venc >= 0 ? R.el('div', `right:90px;top:${tb + venc * (ch + gap) + ch - 40}px;left:auto;font-weight:900;font-size:58px;color:#16A34A;border:7px solid #16A34A;border-radius:18px;padding:2px 22px 6px;background:rgba(255,255,255,.94);transform-origin:50% 50%;z-index:3`, area, R.esc(seloTxt), 'abs') : null;
   const linha = R.el('div', `left:0;top:1060px;width:1080px;height:8px;background:${C.tx};z-index:3`, null, null, 'abs');
   const vid = R.caixaVideo(null, 0, 1068, 1080, 852);
-  const cap = R.el('div', 'top:1730px;font-size:72px', null, null, 'cap');
+  const cap = R.el('div', 'top:995px;font-size:70px', null, null, 'cap');
 
   return t => {
     const tp = R.P(t, 0, 0.3, R.eBack);

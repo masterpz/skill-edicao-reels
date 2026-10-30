@@ -17,16 +17,16 @@ ESTILOS.painel = function (R) {
   function titulo(parent, c) {
     const words = (c.titulo || '').split(/\s+/).filter(Boolean);
     const hl = (c.destaque || '').toLowerCase().split(/\s+/).filter(Boolean);
-    const el = R.el('div', 'left:60px;top:140px;width:960px;line-height:1.02', parent,
+    const el = R.el('div', 'left:70px;top:260px;width:940px;line-height:1.02', parent,
       words.map(w => `<span class=tw style="display:inline-block;margin-right:.22em;${hl.includes(w.toLowerCase().replace(/[^\wÀ-ÿ]/g, '')) ? 'color:' + cor : ''}">${R.esc(w)}</span>`).join(''), 'abs big');
-    R.ajusta(el, 960, 88, 44, 280);
+    R.ajusta(el, 940, 84, 42, 250);
     return { el, tws: [...el.querySelectorAll('.tw')] };
   }
 
   const cont = cenas.map(c => {
     const root = R.el('div', 'left:0;top:0;width:1080px;height:1160px', null, null, 'abs');
     const T = titulo(root, c);
-    const y0 = 140 + T.el.offsetHeight + 46;
+    const y0 = 260 + T.el.offsetHeight + 40;
     const itens = (c.itens || []).slice(0, c.tipo === 'chips' ? 9 : 5);
     const itTempos = itens.map(x => (x && typeof x === 'object' && x.em != null) ? Number(x.em) - c.em : null);
     const itTxt = x => (x && typeof x === 'object') ? (x.texto != null ? x.texto : '') : x;
@@ -68,17 +68,17 @@ ESTILOS.painel = function (R) {
       hBlk = e.offsetHeight;
     } else {
       const e = R.el('div', `left:60px;top:0;width:960px;font-size:72px;font-weight:700;line-height:1.22;color:#e4e0d8`, blk, R.esc(c.texto || ''), 'abs');
-      R.ajusta(e, 960, 72, 30, 1120 - y0);
+      R.ajusta(e, 940, 72, 30, 1010 - y0);
       o.parts = [e];
       hBlk = e.offsetHeight;
     }
-    blk.style.top = (y0 + Math.max(0, (1130 - y0 - hBlk) / 2)) + 'px';
+    blk.style.top = (y0 + Math.max(0, (1020 - y0 - hBlk) / 2)) + 'px';
     return o;
   });
 
   const panel = R.el('div', `left:60px;top:1180px;width:960px;height:660px;border-radius:44px;overflow:hidden;border:5px solid ${cor};box-shadow:0 0 60px ${cor}77;z-index:5`, null, null, 'abs');
   const vid = R.caixaVideo(panel, 0, 0, 950, 650);
-  const cap = R.el('div', 'top:1780px;font-size:70px', null, null, 'cap');
+  const cap = R.el('div', 'top:1105px;font-size:68px', null, null, 'cap');
 
   return t => {
     let ci = 0; cenas.forEach((c, i) => { if (t >= c.em) ci = i; });

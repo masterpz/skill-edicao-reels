@@ -10,7 +10,7 @@ ESTILOS.profundidade = function (R) {
   const bg = R.el('canvas', '', null, null, 'abs'); bg.width = 1080; bg.height = 1920; const bctx = bg.getContext('2d');
   const glow = R.el('div', `left:90px;top:200px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,${cor}88,transparent 65%)`, null, null, 'abs');
   const mid = R.el('div', 'left:0;top:0;width:1080px;height:1920px;perspective:1400px', null, null, 'abs');
-  const SLOTS = [[30, 240, 480, -6], [570, 200, 480, 7], [20, 590, 420, -5], [640, 610, 420, 5], [300, 120, 480, 3], [30, 930, 380, -6], [670, 950, 380, 6], [330, 1180, 420, -3]];
+  const SLOTS = [[50, 300, 460, -6], [570, 280, 460, 7], [40, 640, 410, -5], [630, 660, 410, 5], [310, 270, 460, 3], [40, 970, 370, -6], [670, 990, 370, 6], [340, 1200, 400, -3]];
   const tb = n => `<div class=tb><i style="background:#F87171"></i><i style="background:#FBBF24"></i><i style="background:#34D399"></i><span style="margin-left:10px">${R.esc(n || '')}</span></div>`;
 
   const W = jan.map((j, i) => {
@@ -62,13 +62,13 @@ ESTILOS.profundidade = function (R) {
   });
 
   const fg = R.el('canvas', '', null, null, 'abs'); fg.width = 1080; fg.height = 1920; const fctx = fg.getContext('2d');
-  const cap = R.el('div', 'top:1490px;font-size:80px', null, null, 'cap');
+  const cap = R.el('div', 'top:1450px;font-size:78px', null, null, 'cap');
   const escala = R.num(P.escala_pessoa, 1);
 
   return t => {
     const im = R.getImg(R.frame(t));
     const r = R.cover(1080, 1920);
-    const rect = R.pessoaRect(R.num(P.topo_cabeca, 700), escala);
+    const rect = R.pessoaRect(R.num(P.topo_cabeca, 760), escala);
     const desenhaPessoa = R.pessoa(fctx, t, rect);
     W.forEach(o => {
       const tl = t - o.j.em, p = R.P(t, o.j.em, 0.45, R.eOut);
